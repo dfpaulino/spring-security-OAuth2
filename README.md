@@ -5,7 +5,7 @@ to process request (roles, principal user name etc)
 
 make use of bellow to start with keycloak
 
-`
+```bash
 version: "3"
 services:
   keycloak:
@@ -29,4 +29,4 @@ services:
         #      postgres:
         #condition: service_healthy
 
-`
+```
