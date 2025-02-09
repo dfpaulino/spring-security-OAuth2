@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "9e841fe0-87e1-4af0-9c25-ba2f70f7ba64",
+		"name": "springSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4932730",
+		"_collection_link": "https://speeding-spaceship-700428.postman.co/workspace/My-Git-Projects~5421eee6-d8ec-4689-83e1-dbdf3cc14d68/collection/4932730-9e841fe0-87e1-4af0-9c25-ba2f70f7ba64?action=share&source=collection_link&creator=4932730"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/notices",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/notices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/myAccount",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code_with_pkce",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "eazybankapi",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "123-12313-3123123-123123-33",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid email",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AccessToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJFYXp5QmFuayIsInN1YiI6ImhhcHB5QGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJoYXBweUBleGFtcGxlLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJpYXQiOjE3Mzg2MDY1MjcsImV4cCI6MTczODYxMDEyN30.7JPRK4oaifDw_LRhU9hA6Af8UFpL9bof3ZPjPT7MuiUuCQ79fd--okZ-InNQa0MTAtr6ZSTdp2pAw8PLFNHQvg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/myAccount?email=happy@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myAccount"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "happy@example.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:8080/myAccount",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/myAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"myAccount"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "eazybank-error-reason",
+							"value": "Authentication Failed"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Jan 2025 16:13:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"joe\",\n    \"mobileNumber\":\"000000000\",\n    \"email\":\"dfpaulino@gmail.com\",\n    \"pwd\":\"renault\",\n    \"role\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "0dfbebf7-2598-4637-8620-5e64d976c5b5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contactName\":\"billyBob\",\n    \"contactEmail\":\"billyBob@sapo.pt\",\n    \"subject\":\"stuff\",\n    \"message\":\"tralala\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/myLoans",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid email",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "z9VHRroSZ2fjUs5B6q0M1AtWi5rjCpzo",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "eazybankapi",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8180/realms/eazybankdev/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "AccessToken",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/myLoans?email=happy@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myLoans"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "happy@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/apiLogin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"happy@example.com\",\n    \"password\":\"user123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/apiLogin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apiLogin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
